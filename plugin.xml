@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-appupdate" version="1.0.0" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>appupdate</name>
+    <description>Cordova Appupdate</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,Appupdate</keywords>
+    <js-module name="appupdate" src="www/appupdate.js">
+        <clobbers target="Appupdate" />
+    </js-module>
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="Appupdate">
+                <param name="android-package" value="com.jdata.nhzhjg.AppUpdate" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/AppUpdate.java" target-dir="src/com/jdata/nhzhjg" />
+
+        <!-- <framework src="com.android.support:support-v4:24.1.1+" />
+        <framework src="com.android.support:appcompat-v7:23.1.1" />
+        <framework src="com.android.support:recyclerview-v7:22.2.1" />
+        <framework src="com.spotify:dns:3.0.2" />
+        <framework src="com.loopj.android:android-async-http:1.4.7" />
+        <framework src="io.pristine:libjingle:10111@aar" />
+        <framework src="com.android.support:design:23.1.1" />-->
+        <framework src="com.king.app:app-dialog:1.0.4" />
+        <framework src="com.king.app:app-updater:1.0.4" />
+    </platform>
+</plugin>
